@@ -1,2 +1,2 @@
-# DeRec-Protocol-Xtsate
-Created with CodeSandbox
+# DeRec-Protocol-XState
+Prototype simulation of DeRec using XState
