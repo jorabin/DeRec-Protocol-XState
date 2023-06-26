@@ -1,3 +1,4 @@
+/* Copyright (c) 2023 The Building Blocks Limited. All rights reserved. */
 import "./styles.css";
 import * as React from "react";
 import { createRoot } from "react-dom/client";
@@ -80,7 +81,7 @@ function App() {
 			<div>
 			<h1>DeRec StateChart Demo</h1>
 			<p>This is running the State Chart below:</p>
-			<iframe title="State Chart" width="750em" height="750em" src="https://stately.ai/registry/editor/embed/fc70b0ef-71b1-42d7-94ab-3d6266e9c872?machineId=ccba11f9-9e72-4152-a9b7-f95ed842f49c&mode=Design"/>
+			<iframe title="State Chart" width="750em" height="750em" src="https://stately.ai/registry/editor/embed/fc70b0ef-71b1-42d7-94ab-3d6266e9c872?mode=Design&machineId=240d33a9-c6c9-4e44-b615-e034d2f281c0"/>
 			<div id="entry">
 				<label htmlFor="events">Event: </label>
 				<select name="events" id="events">

@@ -1,4 +1,6 @@
+/* Copyright (c) 2023 The Building Blocks Limited. All rights reserved. */
 import { createMachine, actions, assign } from "xstate";
+
 const { log } = actions;
 
 export const minQuorum = (context) => {
@@ -111,11 +113,13 @@ class Helper {
 	}
 }
 
+const docDescription = "Copyright (c) 2023 The Building Blocks Limited\n\nDescribes a DeRec User's operational state in respect of its Helpers.\n\nThe User state machine receives notifications from the various independent Helper state machines to maintain overall state in respect of minimum numbers of helpers and requirements for a quorum of those helpers to be online for the service to be operational."
 export const deRecUserMachine = createMachine(
 	{
 		/** @xstate-layout N4IgpgJg5mDOIC5QFdZgE4GIAWYA2ADhgJIB2AygJ6kDGA2gAwC6ioBA9rAJYAuX7pViAAeiAKwAOACwA6AEwA2MZICMUsQHYAzArliANCEriVAThlSJGhRokqJurSo0BfF4dQYc+IugDyyDx+AGZUtIwsSCAc3HwCQqIIGqYaMqYKDClqGmJyclqmhsYIYmYWVjZ2DvnObh5oWLiEGACCEBCQEUIxvPyCUYlaVjK2ppq6pgwF40Um5pbWYplScioFWnUgno0+GABKYAC27ABunczdnL3xA4j25tkOCqZyUgxKEgZGc+XWtvaOWruLYNTAAKi6UR6cX6oEGchkKlW72UK1ykgksxKDFS1hUDE+ijydg0rmB2xkPHY7AAYmAAO4ACV26Fg3ma6DaHQgkLYVxhCUQAFo1hYxE4VKUJFoClNMd8EA5zHIGOLMlp1FZpZsKWBSOxkFBsMyOWymr4DsczjyLlD+X1BSVRVIxgpnhozCkXViNFJZM8tCr8YpJWIpDqGjI9QajSbfLAZMEuKQIABFZDsdDIQ6YXnRe03OGIV4IsSmLS+pRSbTpZxYtZyVLitZqhTSnLh8mR6OG40shNJlPpzPZ3MqSJ82IO24IOQvCzVoZSSUMfHqes1BdLTQFBQFUwRjBR-W9uMYBMARwz6AAhjwwOzfAEgqFqPRbZPrrCROIdDI3dY6gaHkzhfMU+I5P+ejvEo9ymEih7oMeMZ9qaMjJlemZ3g+5okBQb55tC05FiUQwyNIOifA4FZllIG4FORe4epoKwVpYbjAvqHTwFE2yXFOhY-ggQoKCoYoSlKMqTEMWJKKkZhONJK5iKJiGUtSdJMv2-Ffo61YyAwhlGcZRlqD6NgWGYtgBmY1ZyGpPaxtpdoCd+iRhlipgSBIiLQcoEg4hI8ESA5J5OWhg5pte2Y6QKM7BvWmQ+VopRKCW1bal2R6Oah8YyJht73rFxFCdKsg5IZDgMK8OiSvW9iyAFliNqlkhtqFKFnqy6GkAV2HFYJiRvGJwEepkcr2BU9XaPImhLEFSzAZ2bhAA */
 		predictableActionArguments: true,
 		id: "user",
+		description: docDescription,
 		context: {
 			helperCount: 0,
 			helpersOnline: 0,
@@ -175,9 +179,11 @@ export const deRecUserMachine = createMachine(
 				initial: "findQuorum",
 				states: {
 					findQuorum: {
+						description: "Pass through state",
 						always: [{ target: "quorate", cond: "isStaticQuorum" }, { target: "inquorate" }]
 					},
 					quorate: {
+						description: "Enough helpers online",
 						on: {
 							helperOutOfSync: {
 								actions: "removeInSync",
@@ -187,6 +193,7 @@ export const deRecUserMachine = createMachine(
 						}
 					},
 					inquorate: {
+						description: "Insufficient helpers online",
 						on: {
 							helperInSync: {
 								actions: "addInSync",
