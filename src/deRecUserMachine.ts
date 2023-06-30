@@ -8,7 +8,7 @@ export const minQuorum = (context) => {
 };
 
 function validHelperOnlineEvent(context, event, currentlyActive) {
-	const helper = context.helpers.get(event.helperId.toLowerCase());
+	const helper = context.helpers.get(event.helperId?.toLowerCase());
 	if (helper && helper.helperAccepted) {
 		return  helper.helperOnline === currentlyActive;
 	}
@@ -55,7 +55,7 @@ const countOnline = (context, event) => {
 export const minHelpers = 3;
 
 function validHelperAcceptEvent(context, event, currentlyActive) {
-	const helper = context.helpers.get(event.helperId.toLowerCase());
+	const helper = context.helpers.get(event.helperId?.toLowerCase());
 	if (helper) {
 		return helper.helperAccepted === currentlyActive;
 	}
