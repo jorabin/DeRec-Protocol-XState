@@ -21,6 +21,10 @@ body {
 	border: 1px solid black;	
 }
 
+#iframe {
+	margin: 3em;
+}
+
 .green {
 	color: green;
 }
