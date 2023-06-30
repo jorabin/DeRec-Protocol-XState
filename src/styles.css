@@ -1,6 +1,24 @@
-.App {
+body {
 	font-family: sans-serif;
 	text-align: center;
+}
+
+#entry {
+	margin: 3em;
+}
+
+#logs {
+	margin: 1em;
+	padding: 1em;
+	text-align: left;
+	border: 1px solid black;
+}
+
+#helpers {
+	margin: 1em;
+	padding: 1em;
+	text-align: left;
+	border: 1px solid black;	
 }
 
 .green {

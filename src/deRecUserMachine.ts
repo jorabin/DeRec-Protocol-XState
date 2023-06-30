@@ -9,8 +9,8 @@ export const minQuorum = (context) => {
 
 function validHelperOnlineEvent(context, event, currentlyActive) {
 	const helper = context.helpers.get(event.helperId.toLowerCase());
-	if (helper) {
-		return helper.helperAccepted && helper.helperOnline === currentlyActive;
+	if (helper && helper.helperAccepted) {
+		return  helper.helperOnline === currentlyActive;
 	}
 	console.warn(`Event '${event.type}' invalid for helperId '${event.helperId}'`);
 	return false;
@@ -278,7 +278,7 @@ export const deRecUserMachine = createMachine(
 				helpersOnline: countOnline
 			}),
 
-			newHelperInvalid: log((_, event) => `Helper "${event.helperId}" is not a valid id or already exists`)
+			newHelperInvalid: (context, event) => console.error(`Helper "${event.helperId}" is not a valid id or already exists`)
 		}
 	}
 );
