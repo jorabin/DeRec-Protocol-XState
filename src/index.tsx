@@ -28,10 +28,17 @@ const LogsContainer = () => {
   return <Console logs={logs} />
 }
 
+
+	
 function App() {
 	const [current, send] = useMachine(deRecUserMachine, {devTools: true});
 	const { helperCount, helpersOnline, helpers } = current.context;
 
+	useEffect(() => {
+		console.log("Simulation is starting");
+		return () => {console.log("Simulation stopping")}
+	}, []);
+	
 	/**
 	 * log an event for sending and send it
 	 * @param eventType helperAdded etc.
