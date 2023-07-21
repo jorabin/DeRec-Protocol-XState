@@ -1,3 +1,4 @@
+```mermaid
 %% Generated with Stately Studio
 stateDiagram-v2
   state "user\n\nCopyright (c) 2023 The Building Blocks Limited\n\nDescribes a DeRec User's operational state in respect of its Helpers.\n\nThe User state machine receives notifications from the various independent Helper state machines to maintain overall state in respect of minimum numbers of helpers and requirements for a quorum of those helpers to be online for the service to be operational." as user {
@@ -24,3 +25,4 @@ stateDiagram-v2
   user --> user : helperAccepted\nif [isValidAddHelperEvent] \ndo / addHelper
   user --> user : helperRemoved\nif [isValidRemoveHelperEvent] \ndo / removeHelper
   user --> user : * \ndo / log(statusLogger)
+```
