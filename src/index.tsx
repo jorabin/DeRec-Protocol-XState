@@ -5,8 +5,8 @@ import { createRoot } from "react-dom/client";
 import { useMachine } from '@xstate/react';
 
 import { inspect } from "@xstate/inspect";
-import {deRecUserMachine, minHelpers, minQuorum} from "./deRecUserMachine"
-import { Hook, Unhook, Console } from "@nicksrandall/console-feed";
+import {deRecUserMachine, minHelpers, minQuorum} from "./deRecHelperControllerStateMachine"
+import { Hook, Unhook, Console } from "console-feed";
 
 inspect({
   url: "https://statecharts.io/inspect",

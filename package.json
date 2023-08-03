@@ -11,7 +11,7 @@
     "react-dom": "18.2.0",
     "react-scripts": "5.0.1",
     "xstate": "4.35.2",
-    "@nicksrandall/console-feed": "3.5.0"
+    "console-feed": "3.5.0"
   },
   "devDependencies": {
     "@types/react": "16.8.8",

@@ -1700,17 +1700,6 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
-"@nicksrandall/console-feed@3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@nicksrandall/console-feed/-/console-feed-3.5.0.tgz#0a216d97cce65c4201d305078e884bbdb69a360e"
-  integrity sha512-Fv5NtxQ3QC/e2sI/FJ1DI23XvjrWcvTlY8E/QjUkK0x+khxdSiP01ml3gdtX//TUkn51e2REvshKAfNRYhPa8A==
-  dependencies:
-    "@emotion/core" "^10.0.10"
-    "@emotion/styled" "^10.0.12"
-    emotion-theming "^10.0.10"
-    linkifyjs "^2.1.6"
-    react-inspector "^5.1.0"
-
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/eslint-scope-5-internals/-/eslint-scope-5-internals-5.1.1-v1.tgz#dbf733a965ca47b1973177dc0bb6c889edcfb129"
@@ -3369,6 +3358,17 @@ connect-history-api-fallback@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-2.0.0.tgz#647264845251a0daf25b97ce87834cace0f5f1c8"
   integrity sha512-U73+6lQFmfiNPrYbXqr6kZ1i1wiRqXnp2nhMsINseWXO8lDau0LGEffJ8kQi4EjLZympVgRdvqjAgiZ1tgzDDA==
+
+console-feed@3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/console-feed/-/console-feed-3.5.0.tgz#0edf7dd1ebd82a24f5727315d0392fbb9a3c2f35"
+  integrity sha512-2N5b37yH0HeaqbBDsHBx0jEy3qvhTGA1dVdGyEM6C1NQhVmIX+ToU6Rt/uo86K0lLs4Lg1orC940YSn+Z3kk5g==
+  dependencies:
+    "@emotion/core" "^10.0.10"
+    "@emotion/styled" "^10.0.12"
+    emotion-theming "^10.0.10"
+    linkifyjs "^2.1.6"
+    react-inspector "^5.1.0"
 
 content-disposition@0.5.4:
   version "0.5.4"
