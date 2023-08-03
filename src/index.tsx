@@ -5,7 +5,7 @@ import { createRoot } from "react-dom/client";
 import { useMachine } from '@xstate/react';
 
 import { inspect } from "@xstate/inspect";
-import {deRecUserMachine, minHelpers, minQuorum} from "./deRecHelperControllerStateMachine"
+import {deRecHelperControllerStateMachine, minHelpers, minQuorum} from "./deRecHelperControllerStateMachine"
 import { Hook, Unhook, Console } from "console-feed";
 
 inspect({
@@ -31,7 +31,7 @@ const LogsContainer = () => {
 
 	
 function App() {
-	const [current, send] = useMachine(deRecUserMachine, {devTools: true});
+	const [current, send] = useMachine(deRecHelperControllerStateMachine, {devTools: true});
 	const { helperCount, helpersOnline, helpers } = current.context;
 
 	useEffect(() => {
